@@ -20,7 +20,8 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 #breadcrumbs
 gem 'breadcrumbs_on_rails'
-
+#carousel
+gem 'owlcarousel-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

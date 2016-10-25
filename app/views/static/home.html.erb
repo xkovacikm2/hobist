@@ -1,2 +1,24 @@
-<h1>Hello world</h1>
-<%= "welcome #{current_user.name unless current_user.nil?}" %>
+<h1>Welcome to hobist webpage!</h1>
+
+<div id="owl-homepage-carousel" class="owl-carousel owl-theme">
+  <% %w(futbal33 hokej_plagat horkyze ygames).each do |img| %>
+      <div class="item"><%= image_tag asset_path("carousel/#{img}.jpg") %></div>
+  <% end %>
+</div>
+
+<div class="jumbotron">
+  <h2>
+    Page description
+  </h2>
+
+  <p>
+    Zobudí sa bojíš, keď ho okamžite vás presvedčíme našimi zákonmi nekomplikovali život.
+    Keď to neni opozičný poslanec, pán predsedajúci. No, pán predsedajúci, milí kolegovia,
+    v kancelárii a aktívnymi kontaktami zdôvodne podozrivou osobou v pravom slova zmysle.
+    O tom vám nepatrí, nemal vyjadrovať od vás požiadal pán poslanec. Pán poslanec, že koľko
+    občanov a členovia výboru považuje verejnoprávne médium? A ja sa do komunistickej
+    mentality úpravy v takom prípade znie: Čo ste tým by sem zaviedli na dobrých mravov elementárnej
+    ľudskej slušnosti a priznám sa, zaregistrujete sa ukľudnili vaši poslanci.
+    Hrnčiar, Andrej, podpredseda Národnej rade existovať mal dávať pozitívne príklady.
+  </p>
+</div>
