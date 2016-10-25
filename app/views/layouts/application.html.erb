@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hobo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Hobist</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <div class="jumbotron center">
+    <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type %>"><p class="center"><%= message %></p></div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
+</div>
 
 </body>
 </html>
