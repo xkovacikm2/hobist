@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   include PostsHelper
 
+  before_action :build_post_filter
+
   def render_404
     respond_to do |format|
       format.html { render :file => "/public/404.html", :status => 404 }

@@ -3,8 +3,10 @@ class PostsController < ApplicationController
   before_action :authenticate_owner, only: [:update, :destroy]
   before_action :load_post, only: :show
 
-  def index
+  autocomplete :user, :name, full: true, scopes: [:name, :email]
 
+  def index
+    @posts = Post.filter(post_filtering_params(params[:post])).paginate(page: params[:page])
   end
 
   def new
@@ -24,5 +26,6 @@ class PostsController < ApplicationController
   end
 
   def show
+
   end
 end

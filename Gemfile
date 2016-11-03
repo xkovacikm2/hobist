@@ -24,6 +24,10 @@ gem 'breadcrumbs_on_rails'
 gem 'owlcarousel-rails'
 #REST service for autocompleting
 gem 'rails4-autocomplete'
+#datepicker
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

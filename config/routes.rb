@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   #users
   devise_for :users, controllers: {registrations: 'registrations'}
+  get 'posts/autocomplete_user_name'
 
   #posts
   resources :posts

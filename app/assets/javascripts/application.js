@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require autocomplete-rails
 //= require bootstrap
 //= require owl.carousel
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
 //= require_tree .
