@@ -22,6 +22,8 @@ gem 'devise'
 gem 'breadcrumbs_on_rails'
 #carousel
 gem 'owlcarousel-rails'
+#REST service for autocompleting
+gem 'rails4-autocomplete'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

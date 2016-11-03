@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  #static pages
+  root 'static#home'
+
   #users
   devise_for :users, controllers: {registrations: 'registrations'}
 
-  #static pages
-  root 'static#home'
+  #posts
+  resources :posts
 end
