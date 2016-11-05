@@ -11,11 +11,18 @@ module PostsHelper
   end
 
   def build_post_filter
-    @post_filter = Post.new post_filter_params(params[:post])
+    @post_filter = Post.new post_filter_model_params
   end
 
-  def post_filter_params(pars)
+  #used for scoping
+  def post_search_params(pars)
     pars ||= {}
-    pars.slice :name, :time
+    pars[:time] = DateTime.parse pars[:time] unless pars[:time].nil?
+    pars.slice :name, :time, :attendants
+  end
+
+  #user for populating filter form
+  def post_filter_model_params
+    params.require(:post).permit(:name, :time, :attendants) unless params[:post].nil?
   end
 end

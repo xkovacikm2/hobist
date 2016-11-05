@@ -3,10 +3,8 @@ class PostsController < ApplicationController
   before_action :authenticate_owner, only: [:update, :destroy]
   before_action :load_post, only: :show
 
-  autocomplete :user, :name, full: true, scopes: [:name, :email]
-
   def index
-    @posts = Post.filter(post_filtering_params(params[:post])).paginate(page: params[:page])
+    @posts = Post.filter(post_search_params(params[:post])).paginate(page: params[:page])
   end
 
   def new
@@ -27,5 +25,11 @@ class PostsController < ApplicationController
 
   def show
 
+  end
+
+  def autocomplete_user_name
+    autocomplete_entity :name do |term|
+      User.where('LOWER(name) like ?', "%#{term.downcase}%").limit 10
+    end
   end
 end

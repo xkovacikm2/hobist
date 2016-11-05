@@ -10,8 +10,11 @@
     <%= f.autocomplete_field :attendants, posts_autocomplete_user_name_path, 'data-delimiter' => ',', multiple: true %>
 
 
+    <%= f.submit 'Search', class: 'btn btn-primary' %>
 <% end %>
 
 <%= javascript_tag do %>
-  $('.datetimepicker').datetimepicker();
+  $('.datetimepicker').datetimepicker({
+    format : 'DD/MM/YYYY HH:mm'
+  });
 <% end %>

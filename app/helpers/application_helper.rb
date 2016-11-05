@@ -14,4 +14,13 @@ module ApplicationHelper
     false
   end
 
+  def autocomplete_entity(method, additional_data=[], &block)
+    term = params[:term]
+    if term && !term.empty?
+      items = yield term
+    else
+      items = {}
+    end
+    render :json => json_for_autocomplete(items, method, additional_data)
+  end
 end

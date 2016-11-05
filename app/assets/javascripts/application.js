@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require autocomplete-rails
 //= require bootstrap
+//= require autocomplete-rails
 //= require owl.carousel
 //= require moment
 //= require bootstrap-datetimepicker
