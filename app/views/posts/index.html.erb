@@ -1,0 +1,16 @@
+<div class="row">
+
+  <aside class="col-md-3">
+    <%= render partial: 'posts/post_filter' %>
+  </aside>
+
+  <div class="col-md-9">
+    <h3 class="center"><%= @posts.size %> result found</h3>
+    <%= will_paginate @posts %>
+    <div class="row">
+      <%= render @posts %>
+    </div>
+    <%= will_paginate @posts %>
+  </div>
+
+</div>

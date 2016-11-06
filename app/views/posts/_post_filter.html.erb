@@ -3,12 +3,23 @@
     <%= label :name, 'Event name' %>
     <%= f.text_field :name %>
 
-    <%= label :time, 'Date and time' %>
-    <%= f.text_field :time, class: 'datetimepicker' %>
+    <hr>
+    <h6>time interval</h6>
+    <%= label :time_from, 'From' %>
+    <%= f.text_field :time_from, class: 'datetimepicker' %>
+
+    <%= label :time_to, 'to' %>
+    <%= f.text_field :time_to, class: 'datetimepicker' %>
+    <hr>
 
     <%= label :attendants, 'Event attendants' %>
     <%= f.autocomplete_field :attendants, posts_autocomplete_user_name_path, 'data-delimiter' => ',', multiple: true %>
 
+    <%= label :category, 'Category' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+
+    <%= label :city_name, 'City' %>
+    <%= f.autocomplete_field :city_name, posts_autocomplete_city_name_path %>
 
     <%= f.submit 'Search', class: 'btn btn-primary' %>
 <% end %>

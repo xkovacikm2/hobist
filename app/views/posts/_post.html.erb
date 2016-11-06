@@ -1,0 +1,13 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <%= link_to post do %>
+        <div class="panel-heading">
+          <h4 class="panel-title"><%= post.name %></h4>
+          <p><%= DateTime.strptime post.time.to_s, '%s' %></p>
+          <p><%= post.city.name %> : <%= post.locality %></p>
+        </div>
+
+        <p><%= sanitize post.description[0,30] %></p>
+    <% end %>
+  </div>
+</div>

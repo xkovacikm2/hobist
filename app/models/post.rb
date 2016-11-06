@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   include Filterable
 
   belongs_to :user
+  has_and_belongs_to_many :users
   belongs_to :category
   belongs_to :city
 
@@ -9,5 +10,11 @@ class Post < ActiveRecord::Base
   validates :description, length: {minimum: 10}
   validates :locality, length: {minimum: 5}
 
-  attr_accessor :attendants
+  attr_accessor :attendants, :city_name, :time_from, :time_to
+
+  scope :category_id, -> (id) { where category_id: id }
+  scope :city_name, -> (name) { joins(:city).where 'cities.name like ?', "#{name}%" }
+  scope :time_from, -> (time) { where 'datetime(posts.time) >= datetime(?)', time }
+  scope :time_to, -> (time) { where 'datetime(posts.time) <= datetime(?)', time }
+  scope :attendants, -> (attendants) { joins(:users).where 'users.name in (?)', attendants }
 end
