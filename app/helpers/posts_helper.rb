@@ -19,11 +19,8 @@ module PostsHelper
     pars ||= {}
     pars[:time_to] = pars[:time_to].to_datetime.to_i.to_s unless pars[:time_to].nil? or pars[:time_to].empty?
     pars[:time_from] = pars[:time_from].to_datetime.to_i.to_s unless pars[:time_from].nil? or pars[:time_from].empty?
-    if pars[:attendants]&.first&.empty?
-      pars[:attendants] = nil
-    else
-      pars[:attendants] = pars[:attendants][0].split(',').reject(&:empty?)
-    end
+    pars[:attendants] = nil if pars[:attendants]&.first&.empty?
+    pars[:attendants] = pars[:attendants][0].split(',').reject(&:empty?) unless pars[:attendants].nil?
     pars.slice :name, :time_from, :time_to, :attendants, :category_id, :city_name
   end
 
