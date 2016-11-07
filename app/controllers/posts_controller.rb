@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   before_action :validate_add_attendant, only: :add_attendant
 
   def index
-    @posts = Post.filter(post_search_params(params[:post])).paginate page: params[:page], per_page: 9
+    if params[:search].nil?
+      @posts = Post.filter(post_search_params(params[:post])).paginate page: params[:page], per_page: 9
+    else
+      @posts = Post.event_name(params[:search]).paginate page: params[:page], per_page: 9
+    end
   end
 
   def new
@@ -22,7 +26,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-
+    if @post.delete
+      flash[:success] = 'Event deleted'
+      redirect_to root_path
+    else
+      flash_now[:danger] = 'Something went wrong, please try again'
+      render 'show'
+    end
   end
 
   def show
