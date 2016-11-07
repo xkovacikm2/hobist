@@ -1,6 +1,6 @@
-<%= form_for @post, method: :post do |f| %>
+<%= form_for @post, method: :patch do |f| %>
     <%= render partial: 'posts/post_form', locals: {f: f} %>
-    <%= f.submit 'Create event', class: 'btn btn-primary' %>
+    <%= f.submit 'Update event', class: 'btn btn-primary' %>
 <% end %>
 <%= javascript_tag do %>
     $('.datetimepicker').datetimepicker({

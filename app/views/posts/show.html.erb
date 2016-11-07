@@ -29,6 +29,10 @@
         <%= link_to 'Do not attend', posts_remove_attendant_path(id: @post.id), class: 'btn btn-primary',
                     method: :delete %>
     <% end %>
+    <% if current_user? @post.user_id %>
+        <%= link_to 'Edit event', edit_post_path(@post), method: :get, class: 'btn btn-primary' %>
+        <%= link_to 'Delete event', post_path(@post), method: :delete, class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
 

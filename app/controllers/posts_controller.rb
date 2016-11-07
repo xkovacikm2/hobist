@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :add_attendant]
-  before_action :authenticate_owner, only: [:update, :destroy]
-  before_action :load_post, only: [:show, :add_attendant, :remove_attendant]
+  before_action :load_post, only: [:show, :add_attendant, :remove_attendant, :edit, :update]
+  before_action :authenticate_owner, only: [:update, :destroy, :edit]
   before_action :validate_remove_attendant, only: :remove_attendant
   before_action :validate_add_attendant, only: :add_attendant
 
@@ -14,15 +14,32 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
   end
 
   def create
+    @post = Post.new post_params
+    @post.user_id = current_user.id
+    if @post.save
+      flash.now[:success] = 'Event successfuly created'
+      render 'show'
+    else
+      flash.now[:danger] = 'Creating event failed, please correct mistakes'
+      render 'new'
+    end
+  end
 
+  def edit
   end
 
   def update
-
+    if @post.update_attributes post_params
+      flash.now[:success] = 'Event successfuly created'
+      render 'show'
+    else
+      flash.now[:danger] = 'Creating event failed, please correct mistakes'
+      render 'edit'
+    end
   end
 
   def destroy
@@ -30,7 +47,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Event deleted'
       redirect_to root_path
     else
-      flash_now[:danger] = 'Something went wrong, please try again'
+      flash.now[:danger] = 'Something went wrong, please try again'
       render 'show'
     end
   end
@@ -60,5 +77,10 @@ class PostsController < ApplicationController
     autocomplete_entity :name do |term|
       City.where('LOWER(name) like ?', "%#{term.downcase}%").limit 20
     end
+  end
+  
+  private
+  def post_params
+    params.require(:post).permit :name, :time_at, :description, :limit, :city_id, :locality, :category_id
   end
 end

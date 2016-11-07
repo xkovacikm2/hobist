@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   validates :description, length: {minimum: 10}
   validates :locality, length: {minimum: 5}
 
-  attr_accessor :attendants, :city_name, :time_from, :time_to, :event_name
+  attr_accessor :attendants, :city_name, :time_from, :time_to, :event_name, :time_at
 
   scope :event_name, -> (name) { where 'posts.name like ?', "%#{name}%" }
   scope :category_id, -> (id) { where category_id: id }
@@ -18,4 +18,16 @@ class Post < ActiveRecord::Base
   scope :time_from, -> (time) { where 'datetime(posts.time) >= datetime(?)', time }
   scope :time_to, -> (time) { where 'datetime(posts.time) <= datetime(?)', time }
   scope :attendants, -> (attendants) { joins(:users).where 'users.name in (?)', attendants }
+
+  after_find do
+    self.time_at = DateTime.strptime self.time.to_s, '%s'
+    puts "kokoti1: #{self.time}"
+    puts "kokoti2: #{self.time_at}"
+    self.city_name = self.city.name
+  end
+
+  before_validation do
+    self.limited = self.limit > 0
+    self.time = self.time_at.to_datetime.to_i
+  end
 end

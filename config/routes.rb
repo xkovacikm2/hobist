@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+
   #static pages
   root 'static#home'
 
