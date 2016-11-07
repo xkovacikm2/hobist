@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   end
 
   def show
-
   end
 
   def autocomplete_user_name

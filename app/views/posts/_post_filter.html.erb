@@ -1,7 +1,7 @@
 <%= form_for @post_filter, method: :get, url: posts_path do |f| %>
 
-    <%= label :name, 'Event name' %>
-    <%= f.text_field :name %>
+    <%= label :event_name, 'Event name' %>
+    <%= f.text_field :event_name %>
 
     <hr>
     <h6>time interval</h6>
@@ -16,7 +16,7 @@
     <%= f.autocomplete_field :attendants, posts_autocomplete_user_name_path, 'data-delimiter' => ',', multiple: true %>
 
     <%= label :category, 'Category' %>
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
 
     <%= label :city_name, 'City' %>
     <%= f.autocomplete_field :city_name, posts_autocomplete_city_name_path %>

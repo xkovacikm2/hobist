@@ -10,8 +10,9 @@ class Post < ActiveRecord::Base
   validates :description, length: {minimum: 10}
   validates :locality, length: {minimum: 5}
 
-  attr_accessor :attendants, :city_name, :time_from, :time_to
+  attr_accessor :attendants, :city_name, :time_from, :time_to, :event_name
 
+  scope :event_name, -> (name) { where 'posts.name like ?', "%#{name}%" }
   scope :category_id, -> (id) { where category_id: id }
   scope :city_name, -> (name) { joins(:city).where 'cities.name like ?', "#{name}%" }
   scope :time_from, -> (time) { where 'datetime(posts.time) >= datetime(?)', time }

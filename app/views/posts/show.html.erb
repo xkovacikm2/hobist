@@ -1,0 +1,50 @@
+<h1><%= @post.name %></h1>
+<div class="row">
+
+  <div class="col-md-6">
+    <h3 class="left">Date: <%= Date.strptime @post.time.to_s, '%s' %></h3>
+    <h3 class="left">Time: <%= Time.strptime(@post.time.to_s, '%s').strftime '%H:%M' %></h3>
+  </div>
+
+  <div class="col-md-6">
+    <h3 class="right">
+      <% if @post.limited %>
+          Limits: <%= @post.users.count %>/<%= @post.limit %>
+      <% else %>
+          Attendants: <%= @post.users.count %>
+      <% end %>
+    </h3>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-4">
+    <%= link_to 'Invite', '#', class: 'btn btn-primary', remote: true %>
+    <%= link_to 'Attend', '#', class: 'btn btn-primary', remote: true, method: :post %>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-5">
+    <div id="map" class="map"></div>
+  </div>
+
+  <div class="col-md-6 col-md-offset-1 row">
+    <div class="col-md-12 panel panel-body">
+      <%= @post.description %>
+    </div>
+
+    <div class="col-md-12 panel panel-body">
+      <p>Email of event creator: </p>
+      <%= mail_to @post.user.email, @post.user.email %>
+    </div>
+  </div>
+
+</div>
+
+<%= content_tag :div, class: 'locality-content', data: {locality: @post.locality, city: @post.city.name} do %>
+<% end %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyABIzzN7SlW5GoZk7xOoBziqObZRw9TzsU&libraries=geometry&callback=initActivityMap", defer: 'defer', async: 'async' %>
+
