@@ -1,4 +1,5 @@
 module PostsHelper
+  #before actions
   def authenticate_owner
     load_post
     return if performed?
@@ -8,6 +9,18 @@ module PostsHelper
   def load_post
     @post = Post.find_by id: params[:id]
     render_404 if @post.nil?
+  end
+
+  def common_validate_attendant(&block)
+    redirect_unauthorized if current_user.nil? or yield
+  end
+
+  def validate_remove_attendant
+    common_validate_attendant { @post.users.exclude? current_user }
+  end
+
+  def validate_add_attendant
+    common_validate_attendant { @post.users.include? current_user or @post.limit == @post.users.count }
   end
 
   def build_post_filter

@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :add_attendant]
   before_action :authenticate_owner, only: [:update, :destroy]
-  before_action :load_post, only: :show
+  before_action :load_post, only: [:show, :add_attendant, :remove_attendant]
+  before_action :validate_remove_attendant, only: :remove_attendant
+  before_action :validate_add_attendant, only: :add_attendant
 
   def index
     @posts = Post.filter(post_search_params(params[:post])).paginate page: params[:page], per_page: 9
@@ -24,6 +26,14 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def add_attendant
+    @post.users << current_user
+  end
+
+  def remove_attendant
+    @post.users.delete current_user
   end
 
   def autocomplete_user_name
