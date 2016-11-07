@@ -23,4 +23,12 @@ module ApplicationHelper
     end
     render :json => json_for_autocomplete(items, method, additional_data)
   end
+
+  def ajax_redirect_to(url)
+    {js: "window.location.replace('#{url}');"}
+  end
+
+  def ajax_flash(div_id)
+    render partial: 'flash/ajax_flash', locals: {div_id: div_id}
+  end
 end

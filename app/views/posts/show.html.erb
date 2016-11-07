@@ -24,9 +24,10 @@
     <% if current_user.nil? %>
         <p>log in to attend <%= link_to 'log in', new_user_session_path, class: 'btn btn-primary' %></p>
     <% elsif @post.users.exclude? current_user %>
-        <%= link_to 'Attend', posts_add_attendant_path, class: 'btn btn-primary', remote: true, method: :post %>
+        <%= link_to 'Attend', posts_add_attendant_path(id: @post.id), class: 'btn btn-primary', method: :post %>
     <% else %>
-        <%= link_to 'Do not attend', posts_remove_attendant_path, class: 'btn btn-primary', method: :delete, remote: true %>
+        <%= link_to 'Do not attend', posts_remove_attendant_path(id: @post.id), class: 'btn btn-primary',
+                    method: :delete %>
     <% end %>
   </div>
 </div>

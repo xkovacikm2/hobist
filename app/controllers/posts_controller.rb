@@ -30,10 +30,14 @@ class PostsController < ApplicationController
 
   def add_attendant
     @post.users << current_user
+    flash[:success] = 'You are now attending the event'
+    redirect_to @post
   end
 
   def remove_attendant
     @post.users.delete current_user
+    flash[:success] = 'You are not attending the event any more'
+    redirect_to @post
   end
 
   def autocomplete_user_name
