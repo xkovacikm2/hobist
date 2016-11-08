@@ -1,9 +1,1 @@
-<%= form_for @post, method: :patch do |f| %>
-    <%= render partial: 'posts/post_form', locals: {f: f} %>
-    <%= f.submit 'Update event', class: 'btn btn-primary' %>
-<% end %>
-<%= javascript_tag do %>
-    $('.datetimepicker').datetimepicker({
-    format : 'DD/MM/YYYY HH:mm'
-    });
-<% end %>
+<%= render partial: 'post_form', locals: {method: :patch, submit: 'Edit event'} %>
