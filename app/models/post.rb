@@ -21,8 +21,6 @@ class Post < ActiveRecord::Base
 
   after_find do
     self.time_at = DateTime.strptime self.time.to_s, '%s'
-    puts "kokoti1: #{self.time}"
-    puts "kokoti2: #{self.time_at}"
     self.city_name = self.city.name
   end
 
