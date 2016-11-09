@@ -28,6 +28,6 @@ class Post < ActiveRecord::Base
 
   before_validation do
     self.limited = self.limit > 0
-    self.time = self.time_at.to_datetime.to_i
+    self.time = self.time_at.to_datetime.to_i unless self.time.class == Fixnum
   end
 end
