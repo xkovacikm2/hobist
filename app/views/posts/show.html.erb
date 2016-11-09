@@ -2,16 +2,16 @@
 <div class="row">
 
   <div class="col-md-6">
-    <h3 class="left">Date: <%= Date.strptime @post.time.to_s, '%s' %></h3>
-    <h3 class="left">Time: <%= Time.strptime(@post.time.to_s, '%s').strftime '%H:%M' %></h3>
+    <h3 class="left">Dátum: <%= Date.strptime @post.time.to_s, '%s' %></h3>
+    <h3 class="left">Čas: <%= Time.strptime(@post.time.to_s, '%s').strftime '%H:%M' %></h3>
   </div>
 
   <div class="col-md-6">
     <h3 class="right">
       <% if @post.limited %>
-          Limits: <%= @post.users.count %>/<%= @post.limit %>
+          Limity: <%= @post.users.count %>/<%= @post.limit %>
       <% else %>
-          Attendants: <%= @post.users.count %>
+          Účastníci: <%= @post.users.count %>
       <% end %>
     </h3>
   </div>
@@ -32,16 +32,16 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Invite</button>
     <% end %>
     <% if current_user.nil? %>
-        <p>log in to attend <%= link_to 'log in', new_user_session_path, class: 'btn btn-primary' %></p>
+        <p>prihláste sa pre zúčastnenie <%= link_to 'prihlásiť sa', new_user_session_path, class: 'btn btn-primary' %></p>
     <% elsif @post.users.exclude? current_user %>
-        <%= link_to 'Attend', posts_add_attendant_path(id: @post.id), class: 'btn btn-primary', method: :post %>
+        <%= link_to 'Zúčastniť sa', posts_add_attendant_path(id: @post.id), class: 'btn btn-primary', method: :post %>
     <% else %>
-        <%= link_to 'Do not attend', posts_remove_attendant_path(id: @post.id), class: 'btn btn-primary',
+        <%= link_to 'Nezúčastniť sa', posts_remove_attendant_path(id: @post.id), class: 'btn btn-primary',
                     method: :delete %>
     <% end %>
     <% if current_user? @post.user_id %>
-        <%= link_to 'Edit event', edit_post_path(@post), method: :get, class: 'btn btn-primary' %>
-        <%= link_to 'Delete event', post_path(@post), method: :delete, class: 'btn btn-primary' %>
+        <%= link_to 'Upraviť udalosť', edit_post_path(@post), method: :get, class: 'btn btn-primary' %>
+        <%= link_to 'Odstrániť udalosť', post_path(@post), method: :delete, class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="col-md-12 panel panel-body">
-      <p>Email of event creator: </p>
+      <p>Email tvorcu udalosti: </p>
       <%= mail_to @post.user.email, @post.user.email %>
     </div>
   </div>

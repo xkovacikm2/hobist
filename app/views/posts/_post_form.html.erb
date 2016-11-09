@@ -3,26 +3,26 @@
     <%= form_for @post, method: method do |f| %>
         <%= form_errors_for @post %>
 
-        <%= f.label :name, 'Event name' %>
+        <%= f.label :name, 'Názov udalosti' %>
         <%= f.text_field :name, required: true %>
 
-        <%= f.label :time_at, 'Event time' %>
+        <%= f.label :time_at, 'Čas konania udalosti' %>
         <%= f.text_field :time_at, class: 'datetimepicker', required: true %>
 
-        <%= f.label :category, 'Category' %>
+        <%= f.label :category, 'Kategória' %>
         <%= f.collection_select :category_id, Category.all, :id, :name, required: true %>
 
-        <%= f.label :city_name, 'City' %>
+        <%= f.label :city_name, 'Mesto' %>
         <%= f.autocomplete_field :city_name, posts_autocomplete_city_name_path, id_element: '#city-id' %>
         <%= f.hidden_field :city_id, id: 'city-id' %>
 
-        <%= f.label :locality, 'Locality' %>
+        <%= f.label :locality, 'Lokalita' %>
         <%= f.text_field :locality, required: true %>
 
-        <%= f.label :limit, 'Limit, 0 means no limit' %>
+        <%= f.label :limit, 'Limit, 0 znamená bez obmedzenia' %>
         <%= f.number_field :limit, value: 0, min: 0, required: true %>
 
-        <%= f.label :description, 'Event description' %>
+        <%= f.label :description, 'Popis udalosti' %>
         <%= f.bootsy_area :description, required: true %>
 
         <%= f.submit submit, class: 'btn btn-primary' %>

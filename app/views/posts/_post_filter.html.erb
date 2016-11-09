@@ -1,27 +1,27 @@
 <%= form_for @post_filter, method: :get, url: posts_path do |f| %>
 
-    <%= label :event_name, 'Event name' %>
+    <%= label :event_name, 'Názov udalosti' %>
     <%= f.text_field :event_name %>
 
     <hr>
-    <h6>time interval</h6>
-    <%= label :time_from, 'From' %>
+    <h6>časové rozmedzie</h6>
+    <%= label :time_from, 'Začiatok' %>
     <%= f.text_field :time_from, class: 'datetimepicker' %>
 
-    <%= label :time_to, 'to' %>
+    <%= label :time_to, 'Koniec' %>
     <%= f.text_field :time_to, class: 'datetimepicker' %>
     <hr>
 
-    <%= label :attendants, 'Event attendants' %>
+    <%= label :attendants, 'Účastníci' %>
     <%= f.autocomplete_field :attendants, posts_autocomplete_user_name_path, 'data-delimiter' => ',', multiple: true %>
 
-    <%= label :category, 'Category' %>
+    <%= label :category, 'Kategória' %>
     <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
 
-    <%= label :city_name, 'City' %>
+    <%= label :city_name, 'Mesto' %>
     <%= f.autocomplete_field :city_name, posts_autocomplete_city_name_path %>
 
-    <%= f.submit 'Search', class: 'btn btn-primary' %>
+    <%= f.submit 'Hľadať', class: 'btn btn-primary' %>
 <% end %>
 
 <%= javascript_tag do %>
