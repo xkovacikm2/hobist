@@ -14,11 +14,11 @@ puts 'seeding users'
 end
 
 puts 'seeding categories'
-Category.create name: 'Sport'
-Category.create name: 'Music'
-Category.create name: 'Food'
-Category.create name: 'Culture'
-Category.create name: 'Other'
+Category.create name: 'Hudba'
+Category.create name: 'Šport'
+Category.create name: 'Jedlo'
+Category.create name: 'Kultúra'
+Category.create name: 'Iné'
 
 city = City.find_by name: 'Bratislava - Karlova Ves'
 users = User.all
