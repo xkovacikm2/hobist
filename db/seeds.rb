@@ -20,7 +20,7 @@ Category.create name: 'Jedlo'
 Category.create name: 'Kultúra'
 Category.create name: 'Iné'
 
-city = City.find_by name: 'Bratislava - Karlova Ves'
+city = City.find_by name: 'Bratislava'
 users = User.all
 categories = Category.all
 puts 'seeding posts'

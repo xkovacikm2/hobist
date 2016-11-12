@@ -233,23 +233,7 @@
 239,Brádno,Brádno,982 67,53,1
 240,Branč,Branč,951 13,40,4
 241,Branovo,Branovo,941 31,42,4
-243,Bratislava - Čunovo,Čunovo,851 10,9,2
-244,Bratislava - Devín,Devín,841 10,8,2
-245,Bratislava - Devínska Nová Ves,Devínska Nová Ves,,8,2
-246,Bratislava - Dúbravka,Dúbravka,,8,2
-247,Bratislava - Jarovce,Jarovce,851 10,9,2
-248,Bratislava - Karlova Ves,Karlova Ves,,8,2
-249,Bratislava - Lamač,Lamač,841 03,8,2
-250,Bratislava - Nové Mesto,Nové Mesto,,7,2
-251,Bratislava - Petržalka,Petržalka,,9,2
-252,Bratislava - Podunajské Biskupice,Podunajské Biskupice,821 06,6,2
-253,Bratislava - Rača,Rača,,7,2
-254,Bratislava - Rusovce,Rusovce,851 10,9,2
-255,Bratislava - Ružinov,Ružinov,,6,2
-256,Bratislava - Staré Mesto,Staré Mesto,,5,2
-257,Bratislava - Vajnory,Vajnory,831 07,7,2
-258,Bratislava - Vrakuňa,Vrakuňa,821 07,6,2
-259,Bratislava - Záhorská Bystrica,Záhorská Bystrica,841 06,8,2
+243,Bratislava,Bratislava,851 10,9,2
 260,Bratkovica,Bratkovica,962 05,13,1
 261,Braväcovo,Braväcovo,976 64,10,1
 262,Brdárka,Brdárka,049 34,54,3
@@ -940,7 +924,6 @@
 1021,Horné Pršany,Horné Pršany,974 05,2,1
 1022,Horné Rykynčice,Horné Rykynčice,962 55,28,1
 1023,Horné Saliby,Horné Saliby,925 03,16,7
-1024,Horné Saliby - časť Hrušov,Horné Saliby - Hrušov,925 02,16,7
 1025,Horné Semerovce,Horné Semerovce,935 84,30,4
 1026,Horné Sľažany,Horné Sľažany,951 71,75,4
 1027,Horné Srnie,Horné Srnie,914 42,69,6
@@ -1426,7 +1409,6 @@
 1547,Kostolec,Kostolec,017 05,48,6
 1548,Kostolište,Kostolište,900 62,34,2
 1549,Kostolná,Kostolná,962 12,13,1
-1550,Kostolná - Záriečie,Kostolná - Záriečie,913 04,69,6
 1551,Kostolná Gala,Kostolná Gala,930 34,15,7
 1552,Kostolná pri Dunaji,Kostolná pri Dunaji,903 01,57,2
 1553,Kostolná Ves,Kostolná Ves,972 26,50,6
@@ -1441,29 +1423,7 @@
 1562,Košeca,Košeca,018 64,20,6
 1563,Košecké Podhradie,Košecké Podhradie,018 31,20,6
 1564,Košecké Rovné,Košecké Rovné,018 32,20,6
-1566,Košice - Barca,Barca,040 17,26,3
-1567,Košice - Dargovských Hrdinov,Dargovských Hrdinov,,25,3
-1568,Košice - Džungľa,Džungľa,,23,3
-1569,Košice - Juh,Juh,,26,3
-1570,Košice - Kavečany,Kavečany,040 01,23,3
-1571,Košice - Košická Nová Ves,Košická Nová Ves,040 14,25,3
-1572,Košice - Krásna,Krásna,040 18,26,3
-1573,Košice - Lorinčík,Lorinčík,040 11,24,3
-1574,Košice - Luník IX,Luník IX,,24,3
-1575,Košice - Myslava,Myslava,040 16,24,3
-1576,Košice - Nad Jazerom,Nad Jazerom,,26,3
-1577,Košice - Pereš,Pereš,040 11,24,3
-1578,Košice - Poľov,Poľov,040 15,24,3
-1579,Košice - Sever,Sever,,23,3
-1580,Košice - Sídlisko KVP,Sídlisko KVP,,24,3
-1581,Košice - Sídlisko Ťahanovce,Sídlisko Ťahanovce,,23,3
-1582,Košice - Staré Mesto,Staré Mesto,040 01,23,3
-1583,Košice - Šaca,Šaca,040 15,24,3
-1584,Košice - Šebastovce,Šebastovce,040 17,26,3
-1585,Košice - Ťahanovce,Ťahanovce,040 13,23,3
-1586,Košice - Vyšné Opátske,Vyšné Opátske,040 01,26,3
-1587,Košice - Západ,Západ,040 11,24,3
-1588,Košice - Železiarne,Železiarne,044 54,24,3
+1566,Košice,Košice,040 17,26,3
 1589,Košická Belá,Košická Belá,044 65,27,3
 1590,Košická Polianka,Košická Polianka,044 41,27,3
 1591,Košické Oľšany,Košické Oľšany,044 42,27,3
@@ -1514,7 +1474,6 @@
 1636,Kraľovany,Kraľovany,027 51,14,8
 1637,Kráľovce,Kráľovce,044 44,27,3
 1638,Kráľovce,Kráľovce,962 65,28,1
-1639,Kráľovce - Krnišov,Kráľovce - Krnišov,962 65,28,1
 1640,Kráľovianky,Kráľovianky,931 01,15,7
 1641,Kráľovičová,Kráľovičová,935 84,30,4
 1642,Kráľovičove Kračany,Kráľovičove Kračany,930 03,15,7
@@ -1710,14 +1669,10 @@
 1837,Ličartovce,Ličartovce,082 03,49,5
 1838,Lidér Tejed,Lidér Tejed,929 01,15,7
 1839,Liesek,Liesek,027 12,72,8
-1840,Lieskov - Dolný Lieskov,Lieskov-Dol. Lieskov,018 21,48,6
-1841,Lieskov - Horný Lieskov,Lieskov-Hor. Lieskov,018 21,48,6
-1842,Lieskov - Podskalie,Lieskov - Podskalie,018 22,48,6
-1843,Lieskov - Tŕstie,Lieskov - Tŕstie,018 22,48,6
+1840,Lieskov,Lieskov,018 21,48,6
 1844,Liesková,Liesková,079 01,37,3
 1845,Lieskovany,Lieskovany,053 21,62,3
 1846,Lieskové,Lieskové,906 33,58,7
-1847,Lieskové - Zemianske Lieskové,Lieskové-Zem.Liesk.,913 05,69,6
 1849,Lieskovec,Lieskovec,962 21,76,1
 1850,Liešno,Liešno,038 22,71,8
 1851,Liešťany,Liešťany,972 27,50,6
@@ -1786,7 +1741,6 @@
 1921,Lovce,Lovce,951 92,75,4
 1922,Lovča,Lovča,966 21,78,1
 1923,Lovčica,Lovčica,966 23,78,1
-1924,Lovčica - Trubín,Lovčica - Trubín,966 23,78,1
 1925,Lovinobaňa,Lovinobaňa,985 54,33,1
 1926,Lozorno,Lozorno,900 55,34,2
 1927,Ložín,Ložín,072 05,37,3
@@ -2153,7 +2107,6 @@
 2305,Nededza,Nededza,013 02,79,8
 2306,Nedelište,Nedelište,985 13,33,1
 2307,Nedožery,Nedožery,972 12,50,6
-2308,Nedožery - Brezany,Nedožery - Brezany,972 12,50,6
 2309,Nechválova Polianka,Nechválova Polianka,067 33,19,5
 2310,Nekyje na Ostrove,Nekyje na Ostrove,930 25,15,7
 2311,Nemce,Nemce,974 01,2,1
@@ -2342,7 +2295,6 @@
 2498,Opátka,Opátka,044 65,27,3
 2501,Opatová,Opatová,984 01,33,1
 2502,Opatovce,Opatovce,913 11,69,6
-2503,Opatovce - Výčapy,Opatovce - Výčapy,951 44,40,4
 2504,Opatovce nad Nitrou,Opatovce nad Nitrou,972 02,50,6
 2505,Opatové Moravce,Opatové Moravce,962 71,28,1
 2506,Opatovská Nová Ves,Opatovská Nová Ves,991 07,73,1
@@ -2363,7 +2315,6 @@
 2521,Ordzovany,Ordzovany,053 06,31,5
 2522,Orechová,Orechová,072 51,61,3
 2523,Orechová Potôň,Orechová Potôň,930 02,15,7
-2524,Orechová Potôň - Lúky,Orechová Potôň-Lúky,930 52,15,7
 2525,Orechové,Orechové,911 05,69,6
 2526,Oreské,Oreské,072 23,37,3
 2527,Oreské,Oreské,908 63,59,7
@@ -2452,7 +2403,6 @@
 2614,Peder,Peder,044 05,27,3
 2615,Peklina,Peklina,013 41,79,8
 2616,Perín,Perín,044 74,27,3
-2617,Perín - Chym,Perín - Chym,044 74,27,3
 2618,Perkovce,Perkovce,951 26,40,4
 2619,Pernek,Pernek,900 53,34,2
 2620,Petkovce,Petkovce,094 33,74,5
@@ -2995,7 +2945,6 @@
 3220,Sokoľ,Sokoľ,044 31,27,3
 3221,Sokoľany,Sokoľany,044 57,27,3
 3222,Sokolce,Sokolce,946 17,22,4
-3223,Sokolce - lúky,Sokolce - lúky,946 14,22,4
 3224,Sokolníky,Sokolníky,951 46,40,4
 3225,Sokolovce,Sokolovce,922 31,45,7
 3226,Soľ,Soľ,094 35,74,5
@@ -3236,7 +3185,6 @@
 3465,Štítnik,Štítnik,049 32,54,3
 3466,Štoliansko,Štoliansko,962 05,13,1
 3467,Štós,Štós,044 26,27,3
-3468,Štós - kúpele,Štós - kúpele,044 26,27,3
 3469,Štôla,Štôla,059 37,47,5
 3470,Štrba,Štrba,059 38,47,5
 3471,Štrbské Pleso,Štrbské Pleso,059 85,47,5
