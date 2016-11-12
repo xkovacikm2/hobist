@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="container col-md-8 col-md-offset-2">
+  <div class="container col-md-6 col-md-offset-3">
     <%= form_for @post, method: method do |f| %>
         <%= form_errors_for @post %>
 
@@ -19,7 +19,7 @@
         <%= f.label :locality, 'Lokalita' %>
         <%= f.text_field :locality, required: true %>
 
-        <%= f.label :limit, 'Limit, 0 znamená bez obmedzenia' %>
+        <%= f.label :limit, 'Kapacita, 0 znamená bez obmedzenia' %>
         <%= f.number_field :limit, value: 0, min: 0, required: true %>
 
         <%= f.label :description, 'Popis udalosti' %>

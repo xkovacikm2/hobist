@@ -1,49 +1,57 @@
-<h2>Upraviť <%= resource_name.to_s.humanize %></h2>
+<div class="row">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
-    <%= devise_error_messages! %>
+  <div class="col-md-4 col-md-offset-4">
 
-    <div class="field">
-      <%= f.label :email %><br/>
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+    <h2>Upraviť <%= resource_name.to_s.humanize %></h2>
 
-    <div class="field">
-      <%= f.label :name %><br/>
-      <%= f.text_field :name %>
-    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
+        <%= devise_error_messages! %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Čakám na potvrdenie: <%= resource.unconfirmed_email %></div>
+        <div class="field">
+          <%= f.label :email %><br/>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :name %><br/>
+          <%= f.text_field :name %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Čakám na potvrdenie: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password %> <i>(nechajte prázdne, ak nechcete zmeniť)</i><br/>
+          <%= f.password_field :password, autocomplete: "off" %>
+          <% if @minimum_password_length %>
+              <br/>
+              <em>heslo musí mať aspoň <%= @minimum_password_length %> znakov</em>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br/>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password %> <i>(potrebujeme vaše aktuálne heslo na potvrdenie zmien)</i><br/>
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Aktualizovať", class: 'btn btn-primary' %>
+        </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :password %> <i>(nechajte prázdne, ak nechcete zmeniť)</i><br/>
-      <%= f.password_field :password, autocomplete: "off" %>
-      <% if @minimum_password_length %>
-          <br/>
-          <em><%= @minimum_password_length %> minimálny počet znakov</em>
-      <% end %>
-    </div>
+    <h3>Zrušiť môj účet</h3>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+    <p>Nie ste spokojní? <%= button_to "Zrušiť účet", registration_path(resource_name), class: 'btn btn-primary',
+                                       data: {confirm: "Ste si istý?"}, method: :delete %></p>
 
-    <div class="field">
-      <%= f.label :current_password %> <i>(potrebujeme vaše aktuálne heslo na potvrdenie zmien)</i><br/>
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
+    <%= link_to "Naspäť", :back, class: 'btn btn-primary' %>
 
-    <div class="actions">
-      <%= f.submit "Aktualizovať", class: 'btn btn-primary' %>
-    </div>
-<% end %>
+  </div>
 
-<h3>Zrušiť môj účet</h3>
-
-<p>Nie ste spokojní? <%= button_to "Zrušiť účet", registration_path(resource_name), class: 'btn btn-primary',
-                          data: {confirm: "Ste si istý?"}, method: :delete %></p>
-
-<%= link_to "Naspäť", :back, class: 'btn btn-primary' %>
+</div>

@@ -7,7 +7,7 @@
   <div class="field">
     <%= f.label :password, "Nové heslo" %><br />
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> minimálny počet znakov)</em><br />
+      <em>(heslo musí mať aspoň <%= @minimum_password_length %> znakov)</em><br />
     <% end %>
     <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
   </div>

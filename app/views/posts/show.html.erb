@@ -2,16 +2,16 @@
 <div class="row">
 
   <div class="col-md-6">
-    <h3 class="left">Dátum: <%= Date.strptime @post.time.to_s, '%s' %></h3>
-    <h3 class="left">Čas: <%= Time.strptime(@post.time.to_s, '%s').strftime '%H:%M' %></h3>
+    <h3 class="left"><b>Dátum:</b> <%= Date.strptime @post.time.to_s, '%s' %></h3>
+    <h3 class="left"><b>Čas:</b> <%= Time.strptime(@post.time.to_s, '%s').strftime '%H:%M' %></h3>
   </div>
 
   <div class="col-md-6">
     <h3 class="right">
       <% if @post.limited %>
-          Limity: <%= @post.users.count %>/<%= @post.limit %>
+          Kapacita: <%= @post.users.count %>/<%= @post.limit %>
       <% else %>
-          Účastníci: <%= @post.users.count %>
+          Počet zúčastnených: <%= @post.users.count %>
       <% end %>
     </h3>
   </div>
@@ -27,34 +27,34 @@
 </div>
 
 <div class="row">
-  <div class="col-md-3 col-md-offset-4">
+  <div class="col-md-12">
+    <% if current_user? @post.user_id %>
+        <%= link_to 'Upraviť udalosť', edit_post_path(@post), method: :get, class: 'postButton' %>
+        <%= link_to 'Odstrániť udalosť', post_path(@post), method: :delete, class: 'postButton' %>
+    <% end %>
     <% unless current_user.nil? %>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Invite</button>
+        <button type="button" class="postButton" data-toggle="modal" data-target=".bs-example-modal-lg">Invite</button>
     <% end %>
     <% if current_user.nil? %>
-        <p>prihláste sa pre zúčastnenie <%= link_to 'prihlásiť sa', new_user_session_path, class: 'btn btn-primary' %></p>
+        <%= link_to 'Prihlásiť sa', new_user_session_path, class: 'postButton' %><br/>prihláste sa na to, aby ste sa mohli zučastniť
     <% elsif @post.users.exclude? current_user %>
-        <%= link_to 'Zúčastniť sa', posts_add_attendant_path(id: @post.id), class: 'btn btn-primary', method: :post %>
+        <%= link_to 'Zúčastniť sa', posts_add_attendant_path(id: @post.id), class: 'postButton', method: :post %>
     <% else %>
-        <%= link_to 'Nezúčastniť sa', posts_remove_attendant_path(id: @post.id), class: 'btn btn-primary',
+        <%= link_to 'Nezúčastniť sa', posts_remove_attendant_path(id: @post.id), class: 'postButton',
                     method: :delete %>
-    <% end %>
-    <% if current_user? @post.user_id %>
-        <%= link_to 'Upraviť udalosť', edit_post_path(@post), method: :get, class: 'btn btn-primary' %>
-        <%= link_to 'Odstrániť udalosť', post_path(@post), method: :delete, class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-top:20px">
 
-  <div class="col-md-5">
+  <div class="col-md-6">
     <div id="map" class="map"></div>
   </div>
 
-  <div class="col-md-6 col-md-offset-1 row">
+  <div class="col-md-6">
     <div class="col-md-12 panel panel-body">
-      <%= @post.description %>
+      <%= raw @post.description %>
     </div>
 
     <div class="col-md-12 panel panel-body">

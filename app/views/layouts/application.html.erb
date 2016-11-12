@@ -16,12 +16,6 @@
         <div class="alert alert-<%= type %>"><p class="center"><%= message %></p></div>
     <% end %>
     <%= yield :form_errors %>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-10">
-        <%= link_to '+ Vytvoriť udalosť', new_post_path, class: 'btn btn-primary' %>
-      </div>
-    </div>
-
     <%= yield %>
   </div>
   <%= render 'layouts/footer' %>

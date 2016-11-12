@@ -221,3 +221,48 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+/* no idea wat im doin (len som skusal co to dokaze D:)*/
+.post {
+  @extend .col-md-4;
+  .postpanel {
+    @extend .panel;
+    @extend .panel-default;
+    .heading {
+      @extend .panel-heading;
+      .title {
+        @extend .panel-title;
+        font-size: 26px;
+        margin-bottom: 15px;
+      }
+      p {
+        text-align: left;
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+    .body {
+      @extend .panel-body;
+      p {
+        text-align: left;
+        font-size: 12px;
+        margin: 0;
+        color: black;
+      }
+    }
+  }
+}
+
+.postButton {
+  @extend .btn;
+  @extend .btn-primary;
+  width: 140px;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
