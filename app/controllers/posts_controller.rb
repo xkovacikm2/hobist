@@ -55,12 +55,6 @@ class PostsController < ApplicationController
   def show
   end
 
-  def invite
-    respond_to do |format|
-      format.js { render layout: false }
-    end
-  end
-
   def send_invitation
     flash[:success] = 'Users invited'
     redirect_to @post;
