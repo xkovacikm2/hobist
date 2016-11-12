@@ -1,0 +1,4 @@
+<%= form_tag posts_send_invitation_path(id: @post.id), method: :post do %>
+    <%= autocomplete_field_tag 'Users', '', posts_autocomplete_user_name_path, 'data-delimiter' => ',', multiple: true %>
+    <%= submit_tag 'Invite', class: 'btn btn-primary' %>
+<% end %>

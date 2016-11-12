@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :add_attendant]
-  before_action :load_post, only: [:show, :add_attendant, :remove_attendant, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :add_attendant, :invite, :send_invitation]
+  before_action :load_post, only: [:show, :add_attendant, :remove_attendant, :edit, :update, :invite, :send_invitation]
   before_action :authenticate_owner, only: [:update, :destroy, :edit]
   before_action :validate_remove_attendant, only: :remove_attendant
   before_action :validate_add_attendant, only: :add_attendant
@@ -55,6 +55,17 @@ class PostsController < ApplicationController
   def show
   end
 
+  def invite
+    respond_to do |format|
+      format.js { render layout: false }
+    end
+  end
+
+  def send_invitation
+    flash[:success] = 'Users invited'
+    redirect_to @post;
+  end
+
   def add_attendant
     @post.users << current_user
     flash[:success] = 'You are now attending the event'
@@ -78,7 +89,7 @@ class PostsController < ApplicationController
       City.where('LOWER(name) like ?', "%#{term.downcase}%").limit 20
     end
   end
-  
+
   private
   def post_params
     params.require(:post).permit :name, :time_at, :description, :limit, :city_id, :locality, :category_id

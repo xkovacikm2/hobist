@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   delete 'posts/remove_attendant'
   get 'posts/autocomplete_user_name'
   get 'posts/autocomplete_city_name'
+  get 'posts/invite'
+  post 'posts/send_invitation'
   resources :posts
 end

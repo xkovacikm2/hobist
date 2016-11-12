@@ -20,7 +20,7 @@
 
 <div class="row">
   <div class="col-md-3 col-md-offset-4">
-    <%= link_to 'Invite', '#', class: 'btn btn-primary', remote: true %>
+    <%= link_to 'Invite', posts_invite_path(id: @post.id), class: 'btn btn-primary', remote: true %>
     <% if current_user.nil? %>
         <p>log in to attend <%= link_to 'log in', new_user_session_path, class: 'btn btn-primary' %></p>
     <% elsif @post.users.exclude? current_user %>
