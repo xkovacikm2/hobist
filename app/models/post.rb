@@ -19,8 +19,8 @@ class Post < ActiveRecord::Base
   scope :event_name, -> (name) { where 'posts.name like ?', "%#{name}%" }
   scope :category_id, -> (id) { where category_id: id }
   scope :city_name, -> (name) { joins(:city).where 'cities.name like ?', "#{name}%" }
-  scope :time_from, -> (time) { where 'datetime(posts.time) >= datetime(?)', time }
-  scope :time_to, -> (time) { where 'datetime(posts.time) <= datetime(?)', time }
+  scope :time_from, -> (time) { where 'posts.time >= ?', time }
+  scope :time_to, -> (time) { where 'posts.time <= ?', time }
   scope :attendants, -> (attendants) { joins(:users).where 'users.name in (?)', attendants }
 
   after_find do
@@ -30,6 +30,6 @@ class Post < ActiveRecord::Base
 
   before_validation do
     self.limited = self.limit > 0
-    self.time = self.time_at.to_datetime.to_i unless self.time.class == Fixnum
+    self.time = self.time_at.to_datetime.to_i unless self.time_at.nil?
   end
 end

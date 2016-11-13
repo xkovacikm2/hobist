@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113160315) do
+ActiveRecord::Schema.define(version: 20161113162553) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -26,18 +26,18 @@ ActiveRecord::Schema.define(version: 20161113160315) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "name",        default: "",    null: false
-    t.text     "description",                 null: false
-    t.integer  "time",        default: 0,     null: false
-    t.float    "entry_fee",   default: 0.0
-    t.boolean  "limited",     default: false
+    t.string   "name",                  default: "",    null: false
+    t.text     "description",                           null: false
+    t.integer  "time",        limit: 8, default: 0,     null: false
+    t.float    "entry_fee",             default: 0.0
+    t.boolean  "limited",               default: false
     t.integer  "limit"
-    t.integer  "city_id",                     null: false
-    t.integer  "user_id",                     null: false
-    t.integer  "category_id",                 null: false
-    t.string   "locality",                    null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "city_id",                               null: false
+    t.integer  "user_id",                               null: false
+    t.integer  "category_id",                           null: false
+    t.string   "locality",                              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "picture"
   end
 
