@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include Filterable
 
+  mount_uploader :picture, PictureUploader
+
   belongs_to :user
   has_and_belongs_to_many :users
   belongs_to :category
@@ -9,6 +11,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :time, :description, :city, :user, :category, :locality
   validates :description, length: {minimum: 10}
   validates :locality, length: {minimum: 5}
+
+  validates_processing_of :picture
 
   attr_accessor :attendants, :city_name, :time_from, :time_to, :event_name, :time_at
 
