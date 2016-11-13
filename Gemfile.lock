@@ -199,6 +199,7 @@ DEPENDENCIES
   bootsy
   breadcrumbs_on_rails
   byebug
+  carrierwave
   coffee-rails (~> 4.1.0)
   datetimepicker-rails!
   devise
@@ -206,6 +207,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
+  mini_magick
   momentjs-rails (~> 2.9)!
   owlcarousel-rails
   rails (= 4.2.6)
@@ -218,4 +220,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.12.5
+   1.13.1

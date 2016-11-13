@@ -25,6 +25,9 @@
         <%= f.label :description, 'Popis udalosti' %>
         <%= f.bootsy_area :description, required: true %>
 
+        <%= f.label :picture, 'Obrázok' %>
+        <%= f.file_field :picture %>
+
         <%= f.submit submit, class: 'btn btn-primary' %>
     <% end %>
   </div>

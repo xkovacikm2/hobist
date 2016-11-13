@@ -8,7 +8,11 @@
         </div>
 
         <div class="body">
-          <p><%= strip_tags post.description[0,200] %></p>
+          <% if post.picture.present? %>
+            <%= image_tag post.picture.url %>
+          <% else %>
+            <p><%= strip_tags post.description[0,200] %></p>
+          <% end %>
         </div>
     <% end %>
   </div>
