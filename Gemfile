@@ -31,6 +31,8 @@ gem 'simple_form'
 #pretty textarea
 gem 'bootsy'
 
+gem 'puma'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

@@ -20,7 +20,7 @@ module PostsHelper
   end
 
   def validate_add_attendant
-    common_validate_attendant { @post.users.include? current_user or @post.limit == @post.users.count }
+    common_validate_attendant { @post.users.include? current_user or (@post.limited and @post.limit == @post.users.count) }
   end
 
   def build_post_filter
