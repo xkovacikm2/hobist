@@ -38,7 +38,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Filter <b class="caret"></b>
           </a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu dropdown-opened">
             <%= render partial: 'posts/post_filter' %>
           </div>
         </li>
@@ -46,7 +46,7 @@
           <%= form_tag(posts_path, :method => 'get', id: 'search-form') do %>
               <%= text_field_tag :search, params[:search], class: 'search-query', placeholder: 'Hľadať', type:
                   'search', data: {} %>
-              <%= submit_tag 'S', class: 'btn btn-primary' %>
+              <%= image_submit_tag 'Hľadaj', :type => :image, :src => "/find_button.png", class: 'btn btn-primary' %>
           <% end %>
         </li>
       </ul>
