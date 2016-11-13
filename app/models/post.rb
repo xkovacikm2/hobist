@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
 
   attr_accessor :attendants, :city_name, :time_from, :time_to, :event_name, :time_at
 
-  scope :event_name, -> (name) { where 'posts.name like ?', "%#{name}%" }
+  scope :event_name, -> (name) { where 'lower(posts.name) like ?', "%#{name.downcase}%" }
   scope :category_id, -> (id) { where category_id: id }
   scope :city_name, -> (name) { joins(:city).where 'cities.name like ?', "#{name}%" }
   scope :time_from, -> (time) { where 'posts.time >= ?', time }
