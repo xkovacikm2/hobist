@@ -1,5 +1,6 @@
 class ChangeTimeToInteger < ActiveRecord::Migration
   def change
-    change_column :posts, :time, :integer, default: 0
+    remove_column :posts, :time
+    add_column :posts, :time, :integer, default: 0
   end
 end
